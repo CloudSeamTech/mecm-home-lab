@@ -4,7 +4,7 @@ Learn Windows endpoint management with Microsoft Configuration Manager (MECM/SCC
 
 **Try the [interactive pilot deployment and client health exercises](simulator/index.html).** On GitHub Pages, open this link from the published course or go directly to `/simulator/` under your project URL. For local practice, open `simulator/index.html` in a browser.
 
-**Walk through the [guided topology lab](simulator/topology/index.html).** On GitHub Pages, open the simulator and select **Open the guided topology lab**.
+**Walk through the [guided topology lab](simulator/topology/index.html).** Follow the map from Active Directory and SQL through site setup, collections, app install and removal, patching, PXE, and daily client health. The simulator uses example devices and runs at zero cost in a browser.
 
 **Start at zero cost with the [browser exercise](configmgr/04-simulation.md).** Read the sample deployment reports and work the tickets directly in GitHub. This exercise uses written scenarios and answer checks.
 

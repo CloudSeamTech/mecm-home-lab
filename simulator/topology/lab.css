@@ -102,3 +102,6 @@ input, select { padding: .5rem; width: 100%; border: 1px solid var(--line); bord
   #steps button { font-size: .84rem; }
 }
 @media (prefers-reduced-motion: reduce) { .diagram path.active { animation: none; } }
+#report { width: 100%; border-collapse: collapse; margin: .65rem 0 1rem; font-size: .85rem; }
+#report caption { color: var(--muted); text-align: left; padding-bottom: .3rem; }
+#report th, #report td { text-align: left; padding: .42rem .55rem; border-bottom: 1px solid var(--line); }

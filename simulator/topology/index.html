@@ -54,7 +54,7 @@
       <section id="console" class="console" hidden aria-label="Simulated console"><strong>Practice console</strong><div id="console-path"></div><p id="console-view" aria-live="polite"></p></section>
       <p class="checkpoint" id="checkpoint"></p>
       <form id="challenge" hidden>
-        <label for="collection">Target collection</label>
+        <label id="challenge-label" for="collection">Target collection</label>
         <select id="collection" required>
           <option value="">Choose a collection</option>
           <option value="pilot">Lab - Pilot · LAB-01</option>
@@ -64,6 +64,12 @@
         <button type="submit" id="run-action"></button>
         <p id="result" role="status"></p>
       </form>
+      <table id="report" hidden>
+        <caption>Simulated device results</caption>
+        <thead><tr><th scope="col">Device</th><th scope="col">Status</th></tr></thead>
+        <tbody id="report-body"></tbody>
+      </table>
+      <button type="button" id="verify-update" hidden>Simulate restart and verify update history</button>
       <div class="controls"><button type="button" id="back">Back</button><button type="button" id="next">Next step</button></div>
     </section>
   </div>
