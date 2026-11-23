@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CCNA Network Engineering Lab</title>
+<link rel="stylesheet" href="lab.css">
+<script src="course.js" defer></script>
+<script src="lab.js" defer></script>
+</head>
+<body>
+<header><a href="../">Home Lab</a><span>CCNA practice</span></header>
+<main>
+<h1>Network engineering lab</h1>
+<p class="intro">Start with one cable and one address. Build up to a site you can configure and troubleshoot.</p>
+<nav id="lessons" aria-label="Lessons"></nav>
+<div class="workspace">
+  <section class="visual" aria-labelledby="visual-title">
+    <div class="section-header"><h2 id="visual-title">Lab topology</h2><output id="visual-status"></output></div>
+    <div id="canvas" class="grid"></div>
+    <div id="visual-controls"></div>
+  </section>
+  <section class="guide" aria-labelledby="lesson-title">
+    <p id="progress"></p>
+    <h2 id="lesson-title" tabindex="-1"></h2>
+    <p id="summary"></p>
+    <ol id="instructions"></ol>
+    <div id="practice"></div>
+    <div class="pager"><button id="previous" type="button">Back</button><button id="next" type="button">Next</button></div>
+  </section>
+</div>
+<details class="references">
+  <summary>Course references and job skills</summary>
+  <p>Cisco’s blueprint covers fundamentals, access, IP connectivity and services, security, and automation. This lab practices selected workflows in each area. Model-specific features and syntax can differ.</p>
+  <ul>
+    <li>Rack installation, optics and copper patching, and port validation. <a href="https://career.serviceglobal.com/jobs/network-l1-technician/jo-2608-38513">Service Global Network L1 Technician posting</a></li>
+    <li>TCP/IP, DHCP, DNS, VLAN and routing triage, change records, and escalation. <a href="https://lincolnit.applytojob.com/apply/zo4ExSUiWe/NOC-Engineer-Junior-Network-Engineer">Lincoln IT junior network engineer posting</a></li>
+    <li>Exam scope and vendor installation procedures. <a href="https://learningnetwork.cisco.com/s/ccna-exam-topics">Cisco CCNA topics</a> · <a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/installing_the_switch.html">Catalyst 9200 hardware photos and mounting figures</a></li>
+  </ul>
+</details>
+<p class="footnote">Browser simulation. Terminal output is modeled for the guided exercises. Use isolated lab gear or a network simulator for real IOS practice.</p>
+</main>
+</body>
+</html>

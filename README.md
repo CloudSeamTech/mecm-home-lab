@@ -1,4 +1,5 @@
 # Windows Endpoint Management Home Lab
+[Open the CCNA Network Engineering Lab](ccna/index.html) for browser-based subnetting, rack and cabling diagrams, and guided IOS practice.
 
 Learn Windows endpoint management with Microsoft Configuration Manager (MECM/SCCM).
 
