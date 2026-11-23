@@ -20,6 +20,7 @@ The hosted build below is a reference for future use because it incurs cloud cha
 | [5. Build a hosted domain lab](configmgr/05-hosted-domain-lab.md) | Compare cloud hosts, configure AD and DNS, join two endpoints, and set up the site |
 | [6. Run daily admin checks](configmgr/06-daily-operations.md) | Probe client health, check updates and content, and work common tickets |
 | [7. Verify the backend](configmgr/07-backend-checklist.md) | Follow DNS, domain join, site assignment, and client policy with sample failures |
+| [8. PXE boot and Windows imaging](configmgr/08-pxe-task-sequence.md) | Boot a blank VM, run an OS deployment task sequence, and verify client setup |
 
 Configuration Manager uses collections and its own Windows client. Intune uses Microsoft Entra groups and cloud enrollment. Targeting, detection, phased deployment, and troubleshooting transfer between the tools. For cloud-specific practice such as Autopilot and Intune Graph reporting, see the optional [Intune course](intune.md).
 
