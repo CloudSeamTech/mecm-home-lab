@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pilot app deployment | MECM practice</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #edf3f3; color: #152d34; font: 1rem/1.55 system-ui, sans-serif; }
+header { background: #123940; color: #fff; padding: 2rem 1.2rem; }
+main, header > div { max-width: 48rem; margin: auto; }
+main { padding: 1.2rem; }
+h1, h2 { line-height: 1.2; margin: .35rem 0 .7rem; }
+section { padding: 1.25rem; background: white; border: 1px solid #bccfd0; border-radius: .8rem; margin-bottom: 1rem; }
+label { display: block; font-weight: 650; }
+select, button { font: inherit; padding: .65rem .8rem; border-radius: .4rem; }
+select { width: 100%; background: white; color: inherit; border: 1px solid #54767b; }
+button { border: 1px solid #146052; background: #146052; color: white; cursor: pointer; margin: .35rem .35rem .35rem 0; }
+button.secondary { background: white; color: #146052; }
+:focus-visible { outline: 3px solid #ab5000; outline-offset: 3px; }
+table { border-collapse: collapse; width: 100%; text-align: left; }
+th, td { padding: .55rem .4rem; border-bottom: 1px solid #d6e2e2; }
+a { color: #146052; }
+</style>
+<script src="lab.js" defer></script>
+</head>
+<body>
+<header><div>
+  <span>Configuration Manager practice</span>
+  <h1>Deploy to one pilot PC</h1>
+  <p>Install the Practice App on LAB-01 only. Leave LAB-02 outside the rollout.</p>
+</div></header>
+<main>
+  <section aria-labelledby="target-heading">
+    <h2 id="target-heading">Choose and review a collection</h2>
+    <form id="deployment">
+      <label for="collection">Target collection</label>
+      <select id="collection" required aria-describedby="members">
+        <option value="">Choose a collection</option>
+        <option value="pilot">Lab - Pilot</option>
+        <option value="broad">Lab - Broad</option>
+        <option value="all">All Lab Devices</option>
+      </select>
+      <p id="members" aria-live="polite">Choose a collection to see which PCs it contains.</p>
+      <button type="submit">Deploy Practice App</button>
+      <button type="reset" class="secondary">Reset exercise</button>
+    </form>
+  </section>
+  <section aria-labelledby="report-heading">
+    <h2 id="report-heading">Deployment report</h2>
+    <table>
+      <thead><tr><th scope="col">Device</th><th scope="col">App status</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">LAB-01</th><td id="device-one">No deployment</td></tr>
+        <tr><th scope="row">LAB-02</th><td id="device-two">No deployment</td></tr>
+      </tbody>
+    </table>
+    <p id="feedback" role="status">No attempt yet. Results here are simulated.</p>
+  </section>
+  <p>For the real console steps, open Module 1 in the course README.</p>
+  <section aria-labelledby="health-heading">
+    <h2 id="health-heading">Client health ticket</h2>
+    <p>LAB-02 stopped reporting overnight. LAB-01 is healthy. Open the checks below, then choose what to do first.</p>
+    <details>
+      <summary>Check the site</summary>
+      <p>The management point shows healthy. LAB-01 received policy this morning.</p>
+    </details>
+    <details>
+      <summary>Check LAB-02</summary>
+      <p>The PC is online and resolves the management point. In PowerShell, <code>Get-Service CcmExec</code> shows <strong>Stopped</strong>.</p>
+    </details>
+    <form id="health-ticket">
+      <label for="health-action">What would you do first?</label>
+      <select id="health-action" required>
+        <option value="">Choose an action</option>
+        <option value="service">Check why the client service stopped</option>
+        <option value="server">Restart the site server</option>
+        <option value="deploy">Send the app again</option>
+      </select>
+      <button type="submit">Check my answer</button>
+      <button type="reset" class="secondary">Reset ticket</button>
+    </form>
+    <p id="health-feedback" role="status">Choose an action after reviewing the evidence.</p>
+  </section>
+  <noscript><p>Enable JavaScript in your browser to use this exercise.</p></noscript>
+</main>
+</body>
+</html>
