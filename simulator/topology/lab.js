@@ -101,7 +101,7 @@ const nodes = [...document.querySelectorAll('[data-node]')];
 const tabs = labSteps.map((step, position) => {
   const button = document.createElement('button');
   button.type = 'button';
-  button.textContent = (position + 1) + '. ' + step.tab;
+  button.textContent = step.tab;
   button.addEventListener('click', () => showStep(position, true));
   get('steps').append(button);
   return button;
@@ -117,6 +117,7 @@ function drawMap(activeEdges = [], status = '') {
     const fqdn = hosts[key] + '.' + notes.domain;
     node.hidden = index < revealAt[key];
     node.classList.toggle('current', labSteps[index].node === key);
+    node.classList.toggle('linked', activeEdges.some((edge) => edge.split('-').includes(key)));
     node.querySelector('small').textContent = fqdn + ' · ' + notes[key];
     node.setAttribute('aria-label', 'Edit IP address for ' + fqdn);
   });
@@ -162,6 +163,7 @@ function drawConsole(step) {
 function showStep(position, focus = false) {
   index = position;
   const step = labSteps[index];
+  get('step-count').textContent = 'Step ' + (index + 1) + ' of ' + labSteps.length;
   tabs.forEach((tab, offset) => {
     if (offset === index) tab.setAttribute('aria-current', 'step');
     else tab.removeAttribute('aria-current');
@@ -184,6 +186,7 @@ function showStep(position, focus = false) {
   get('run-action').textContent = step.challenge || '';
   get('back').disabled = index === 0;
   get('next').disabled = index === labSteps.length - 1;
+  get('next').textContent = get('next').disabled ? 'Final step' : 'Next: ' + labSteps[index + 1].tab;
   get('note-status').textContent = 'Select a visible machine to edit its IP address.';
   editNote(index === 0 ? 'domain' : step.node);
   drawConsole(step);

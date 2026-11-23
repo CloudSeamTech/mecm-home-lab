@@ -8,18 +8,18 @@
 <script src="lab.js" defer></script>
 </head>
 <body>
-<header class="bar"><a href="../">MECM Home Lab</a><span>Browser simulation</span></header>
+<header class="bar"><a href="../">‹ MECM Home Lab</a><span>Browser simulation</span></header>
 <main>
   <h1>Build and run a MECM lab</h1>
   <p class="intro">Set up a Windows domain, connect two PCs, and send your first deployment. Use the example addresses or enter your own.</p>
-  <nav id="steps" aria-label="Lab steps"></nav>
+  <div class="step-strip"><nav id="steps" aria-label="Lab steps"></nav><span id="step-count"></span></div>
   <div class="layout">
     <section class="topology" aria-labelledby="map-title">
       <div class="map-header">
         <div><h2 id="map-title">Lab topology</h2><p id="domain-summary"></p></div>
         <span id="map-status"></span>
       </div>
-      <div class="diagram" aria-label="Lab devices and their connections">
+      <div class="diagram" role="group" aria-label="Lab devices and their connections">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <path id="ad-sql" d="M25 16 H75"/>
           <path id="ad-cm" d="M25 16 V33 H50 V50"/>
@@ -28,13 +28,14 @@
           <path id="cm-broad" d="M50 50 V67 H75 V83"/>
           <path id="cm-pxe" d="M50 50 V83"/>
         </svg>
-        <button class="node" data-node="ad" type="button"><strong>DC01</strong><span>Active Directory / DNS</span><small></small></button>
-        <button class="node" data-node="sql" type="button"><strong>SQL01</strong><span>Site database</span><small></small></button>
-        <button class="node" data-node="cm" type="button"><strong>CM01</strong><span>Configuration Manager</span><small></small></button>
-        <button class="node" data-node="pilot" type="button"><strong>LAB-01</strong><span>Pilot client</span><small></small></button>
-        <button class="node" data-node="broad" type="button"><strong>LAB-02</strong><span>Broad client</span><small></small></button>
-        <button class="node" data-node="pxe" type="button"><strong>PXE-01</strong><span>Blank imaging VM</span><small></small></button>
+        <button class="node" data-node="ad" type="button"><i class="device-icon server" aria-hidden="true"></i><strong>DC01</strong><span>Active Directory / DNS</span><small></small></button>
+        <button class="node" data-node="sql" type="button"><i class="device-icon server" aria-hidden="true"></i><strong>SQL01</strong><span>Site database</span><small></small></button>
+        <button class="node" data-node="cm" type="button"><i class="device-icon server" aria-hidden="true"></i><strong>CM01</strong><span>Configuration Manager</span><small></small></button>
+        <button class="node" data-node="pilot" type="button"><i class="device-icon monitor" aria-hidden="true"></i><strong>LAB-01</strong><span>Pilot client</span><small></small></button>
+        <button class="node" data-node="broad" type="button"><i class="device-icon monitor" aria-hidden="true"></i><strong>LAB-02</strong><span>Broad client</span><small></small></button>
+        <button class="node" data-node="pxe" type="button"><i class="device-icon monitor" aria-hidden="true"></i><strong>PXE-01</strong><span>Blank imaging VM</span><small></small></button>
       </div>
+      <div class="legend"><span>Configured connection</span><span>Active connection</span></div>
       <form id="notes">
         <label for="note-value" id="note-label">Domain suffix</label>
         <div class="note-row">
