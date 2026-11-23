@@ -4,6 +4,8 @@ Learn Windows endpoint management with Microsoft Configuration Manager (MECM/SCC
 
 **Try the [interactive pilot deployment and client health exercises](simulator/index.html).** On GitHub Pages, open this link from the published course or go directly to `/simulator/` under your project URL. For local practice, open `simulator/index.html` in a browser.
 
+**Walk through the [guided topology lab](simulator/topology/index.html).** On GitHub Pages, open the simulator and select **Open the guided topology lab**.
+
 **Start at zero cost with the [browser exercise](configmgr/04-simulation.md).** Read the sample deployment reports and work the tickets directly in GitHub. This exercise uses written scenarios and answer checks.
 
 **For a real console with servers already configured**, see the [prebuilt Microsoft evaluation kit](configmgr/00-setup.md). If eligible and your PC meets the requirements, download the kit, import the virtual machines into Hyper-V, and start them. The kit supplies a domain controller, domain-joined clients, and a configured Configuration Manager site. The standalone 180-day evaluation is software you install into a lab you build.

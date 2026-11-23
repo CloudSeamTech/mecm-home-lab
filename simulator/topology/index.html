@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECM Guided Lab</title>
+<link rel="stylesheet" href="lab.css">
+<script src="lab.js" defer></script>
+</head>
+<body>
+<header class="bar"><a href="../">MECM Home Lab</a><span>Browser simulation</span></header>
+<main>
+  <h1>Build and run a MECM lab</h1>
+  <p class="intro">Set up a Windows domain, connect two PCs, and send your first deployment. Use the example addresses or enter your own.</p>
+  <nav id="steps" aria-label="Lab steps"></nav>
+  <div class="layout">
+    <section class="topology" aria-labelledby="map-title">
+      <div class="map-header">
+        <div><h2 id="map-title">Lab topology</h2><p id="domain-summary"></p></div>
+        <span id="map-status"></span>
+      </div>
+      <div class="diagram" aria-label="Lab devices and their connections">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path id="ad-sql" d="M25 16 H75"/>
+          <path id="ad-cm" d="M25 16 V33 H50 V50"/>
+          <path id="sql-cm" d="M75 16 V33 H50 V50"/>
+          <path id="cm-pilot" d="M50 50 V67 H25 V83"/>
+          <path id="cm-broad" d="M50 50 V67 H75 V83"/>
+          <path id="cm-pxe" d="M50 50 V83"/>
+        </svg>
+        <button class="node" data-node="ad" type="button"><strong>DC01</strong><span>Active Directory / DNS</span><small></small></button>
+        <button class="node" data-node="sql" type="button"><strong>SQL01</strong><span>Site database</span><small></small></button>
+        <button class="node" data-node="cm" type="button"><strong>CM01</strong><span>Configuration Manager</span><small></small></button>
+        <button class="node" data-node="pilot" type="button"><strong>LAB-01</strong><span>Pilot client</span><small></small></button>
+        <button class="node" data-node="broad" type="button"><strong>LAB-02</strong><span>Broad client</span><small></small></button>
+        <button class="node" data-node="pxe" type="button"><strong>PXE-01</strong><span>Blank imaging VM</span><small></small></button>
+      </div>
+      <form id="notes">
+        <label for="note-value" id="note-label">Domain suffix</label>
+        <div class="note-row">
+          <input id="note-value" maxlength="80" required spellcheck="false" autocomplete="off">
+          <button type="submit">Save</button>
+        </div>
+        <div class="note-links"><button id="domain-note" type="button">Edit domain</button><button id="subnet-note" type="button">Edit subnet</button></div>
+        <p class="muted" id="note-status" role="status">Select a visible machine to edit its IP address.</p>
+      </form>
+    </section>
+    <section class="guide" aria-labelledby="step-title">
+      <p id="machine" class="machine"></p>
+      <h2 id="step-title" tabindex="-1"></h2>
+      <p id="purpose"></p>
+      <ol id="actions"></ol>
+      <section id="console" class="console" hidden aria-label="Simulated console"><strong>Practice console</strong><div id="console-path"></div><p id="console-view" aria-live="polite"></p></section>
+      <p class="checkpoint" id="checkpoint"></p>
+      <form id="challenge" hidden>
+        <label for="collection">Target collection</label>
+        <select id="collection" required>
+          <option value="">Choose a collection</option>
+          <option value="pilot">Lab - Pilot · LAB-01</option>
+          <option value="broad">Lab - Broad · LAB-02</option>
+          <option value="all">All Lab Devices · LAB-01 and LAB-02</option>
+        </select>
+        <button type="submit" id="run-action"></button>
+        <p id="result" role="status"></p>
+      </form>
+      <div class="controls"><button type="button" id="back">Back</button><button type="button" id="next">Next step</button></div>
+    </section>
+  </div>
+  <p class="muted">The topology and deployment results are simulated. IP notes stay in this browser. <a href="../">Open the original practice tickets</a>.</p>
+</main>
+</body>
+</html>
